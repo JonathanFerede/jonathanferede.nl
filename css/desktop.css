@@ -1,0 +1,272 @@
+#responsive:before{
+	content:"desktop";
+}
+
+body
+{
+	width:100vw;
+	height: 100vh;
+	font-size: 16px;
+}
+#preloader
+{
+	width:100vw;
+	height: 100vh;
+}
+#preloader h2
+{
+	line-height: 31px;
+	position:static;
+	width:100vw;
+	height: 31px;
+	text-align: left;
+	padding-left: 25vw;
+	margin-top: 45vh;
+	float:left;
+}
+#pagewrapper
+{
+	width:100%;
+	height:100%;
+}
+/*----------------MENU--------------*/
+	header#menu
+	{
+		position: fixed;
+		display:block;
+		height: auto;
+		right:8vh;
+		top: 3vh;
+		width:40%;
+		background-color: transparent;
+		color:white;
+		z-index: 2147483647;
+		-webkit-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		transition: all 1s ease;
+	}
+	#menu.open{
+		padding-left:0%;
+	}
+	#menu.closed
+	{
+		padding-left:100%;
+	}
+
+	header .wrapper
+	{
+		width:40vw;
+		display: block;
+		padding: 0;
+		border:none;
+		overflow-x: hidden;
+		overflow: hidden;
+		height: auto;
+	}
+	header .wrapper .topGradient, header .wrapper .bottomGradient
+	{
+		display:none;
+		height: 15vw;
+		padding:  5vw;
+		line-height: 5vw;
+	}
+	header .wrapper ul
+	{
+		padding:0;
+		margin:0;
+		overflow: hidden;
+		display: -webkit-flex; /* Safari */
+		-webkit-justify-content: center; /* Safari 6.1+ */
+		display: flex;
+	}
+	header .wrapper nav li
+	{
+		width:24%;
+		text-align: center;
+		display: inline-block;
+		line-height: 7vh;
+		font-size: 120%;
+		border: solid white;
+		border-width: 0px 1px;
+		overflow: hidden;
+		-webkit-transition: all 0.2s ease;
+		-o-transition: all 0.2s ease;
+		-moz-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+	}
+	header .wrapper nav li:first-child
+	{
+		border-left:none;
+	}
+	header .wrapper nav li:last-child
+	{
+		border-right:none;
+	}
+	header .wrapper nav li:hover
+	{
+		width:26%;
+	}
+
+	#menu_btn
+	{
+		position: absolute;
+		right:5vh;
+		top: 5vh;
+		width: 3vh;
+		z-index:99999;
+	}
+	#menu_btn .st0
+	{
+		fill:#FFFFFF;
+	}
+/*-------------MENU ANIMATION---------*/
+
+section#COMMENT
+{
+	float:left;
+	width:40%;
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+section#CONTENT
+{
+	float:left;
+	width:60%;
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+/*----------------INTRO ANIMATION---------------------*/
+section#COMMENT, section#CONTENT, #left, #right, #left h2, #right h2
+{
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	transition: all 1s ease;
+}
+#pagewrapper.intro section#COMMENT
+{
+	width:100%;
+}
+#pagewrapper.intro section#COMMENT #left
+{
+	width:100%;
+}
+#pagewrapper.intro section#COMMENT #right
+{
+	width:0%;
+}
+#pagewrapper.intro section#CONTENT
+{
+	width:0%;
+}
+#pagewrapper.intro section#COMMENT #left h2, #pagewrapper.intro section#COMMENT #right h2
+{
+	padding-left: 25vw;
+}
+/*----------------COMMENT SECTION---------------------*/
+	section#COMMENT #titleWrapper
+	{
+		position: absolute;
+		top:45vh;
+		width:100vw;
+		margin:0 auto;
+	}
+	#left
+	{
+		float:left;
+		width:40%;
+		overflow-x: hidden;
+	}
+	#right
+	{
+		float:left;
+		width:60%;
+		overflow-x: hidden;
+	}
+	#left h2
+	{
+		float:left;
+		color:black;
+	}
+	#right h2
+	{
+		float:right;
+		color:white;
+	}
+	#titleWrapper h2
+	{
+		width:100vw;
+		text-align: left;
+		padding-left: 5vh;
+	}
+	#titleWrapper .comment
+	{
+		text-align: left;
+		display: block;
+		padding: 5vh;
+		padding-left: 5vh;
+	}
+/*----------------CONTENT SECTION---------------------*/
+	section#CONTENT .slider
+	{
+		width: 100%;
+	}
+	section#CONTENT .slider li
+	{
+		width:100%;
+		height: 100vh;
+	}
+	
+	#backBtn, #nextBtn
+	{
+		width:3vh;
+		position: fixed;
+		right:5vh;
+		transform: rotate(90deg);
+		z-index: 99999;
+	}
+	#backBtn
+	{
+		bottom:55vh;
+	}
+	#nextBtn
+	{
+		top:55vh;
+	}
+
+#nextBtn:hover, #backBtn:hover
+{
+	width:4vh;
+	right:4.5vh;
+}
+li#contact
+{
+	background-image: url('../images/desktop/profile_pic.jpg');
+	background-image: url('../images/desktop/profile_pic_hd.jpg');
+	background-position: right;
+	background-size: cover;
+}
+/*---------FOOTER----------*/
+#footer
+{
+	height: auto;
+	width:40vw;
+	padding:5vh;
+	right:0;
+	color:white;
+}
+#footer ul li i
+{
+	color:white;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,239 @@
+@media all and (orientation:portrait) {
+  #responsive:before{
+	content:"tablet portrait";
+	}
+}
+@media all and (orientation:landscape) {
+	#responsive:before{
+		content:"tablet landscape";
+	}
+}
+
+
+
+/*----------------MENU--------------*/
+header#menu
+{
+	height: 100vh;
+	position: absolute;
+	width: 100vw;
+	z-index: 1;
+}
+header .wrapper
+{
+	display: block;
+	border: none;
+	padding:5vw;
+}
+header .wrapper .topGradient, header .wrapper .bottomGradient{
+	height: 15vw;
+	padding:  5vw;
+	line-height: 5vw;
+}
+header .wrapper nav
+{
+	
+}
+header .wrapper nav li
+{
+	line-height: 300%;
+	font-size: 150%;
+	border-bottom:1px solid black;
+}
+
+/*----------------MENU BTN---------------------*/
+#menu_btn
+{
+	position: fixed;
+	right:0;
+	z-index:99999;
+}
+@media all and (orientation:portrait) {
+	#menu_btn
+	{
+		width: 5vw;
+		margin: 5vw;
+	}
+	#menu_btn .st0
+	{
+		fill:#000000;
+	}
+}
+@media all and (orientation:landscape) {
+	
+	#menu_btn
+	{
+		width: 5vh;
+		margin: 5vh;
+	}
+	#menu_btn .st0
+	{
+		fill:#FFFFFF;
+	}
+}
+
+
+@media all and (orientation:landscape) {
+	
+	header .wrapper .topGradient, header .wrapper .bottomGradient{
+		height: 15vh;
+		padding: 5vh 5vw;
+		line-height: 5vh;
+	}
+}
+
+
+/*----------------COMMENT SECTION---------------------*/
+
+	section#COMMENT #titleWrapper
+	{
+		left: 0;
+		width:100%;
+		height: 100%;
+	}
+	#right
+	{
+		display:none;
+	}
+
+	section#COMMENT #left{
+		display: block;
+		height: 100%;
+		position:relative;
+		z-index: 0;
+	}
+	section#COMMENT #left .comment{
+		position:absolute;
+		bottom: 0;
+	}
+/*----------------CONTENT SECTION---------------------*/
+@media all and (orientation:portrait) {	
+	section#COMMENT
+	{
+		width:100vw;
+		height: 40vh;
+		padding: 5vw;
+		padding-top:15vw;
+	}
+	section#CONTENT
+	{
+		width:100vw;
+		height: 60vh;
+	}
+	section#CONTENT .slider
+	{
+		display:inline-flex;
+		height: 100%;
+	}
+	section#CONTENT .slider li
+	{
+		width:100vw;
+		height: 100%;
+		overflow-x: hidden;
+	}
+	#backBtn, #nextBtn
+	{
+		width:5vw;
+		position: absolute;
+		bottom:30vh;
+	}
+	#backBtn
+	{
+		left:5vw;
+	}
+	#nextBtn
+	{
+		right:5vw;
+	}
+}
+
+@media all and (orientation:landscape) {
+	section#COMMENT
+	{
+		float:left;
+		width:50vw;
+		height: 100vh;
+		padding: 5vw;
+	}
+	section#CONTENT
+	{
+		float:right;
+		width:50vw;
+		height: 100vh;
+	}
+	section#CONTENT .slider
+	{
+		width: 100%;
+	}
+	section#CONTENT .slider li
+	{
+		width:100%;
+		height: 100vh;
+	}
+	
+	#backBtn, #nextBtn
+	{
+		width:5vh;
+		position: absolute;
+		right:25vw;
+		transform: rotate(90deg);
+	}
+	#backBtn
+	{
+		top:5vh;
+	}
+	#nextBtn
+	{
+		bottom:5vh;
+	}
+}
+
+li#contact
+{
+	background-image: url('../images/tablet/profile_pic.jpg');
+	background-image: url('../images/tablet/profile_pic_hd.jpg');
+	background-position: right;
+	background-size: cover;
+}
+
+
+/*-------------MENU ANIMATION---------*/
+
+	#menu.open{
+		height: 100vh;
+		-webkit-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+	#menu.open *
+	{
+		opacity: 1;
+    	animation-delay: 0.8s;
+		-webkit-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+	#menu.closed
+	{
+		height: 0;
+		-webkit-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+	#menu.closed *
+	{
+		opacity: 0;
+    	animation-delay: 0.8s;
+		-webkit-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+
+
+
+
+

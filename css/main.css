@@ -1,0 +1,314 @@
+*
+{
+	color:inherit;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+		  box-sizing: border-box;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body
+{
+	width:100vw;
+	height: 100vh;
+	overflow-y: scroll;
+	display:block;
+	margin:0;
+	padding: 0;
+	
+	
+	font-family: "futura-pt",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+.wrapper
+{
+	border:1px solid grey;
+	width:100%;
+	height: 100%;
+	overflow-y: scroll;
+	float: left;
+}
+/*-------Preloader------*/
+#preloader
+{
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 999999999999;
+}
+.show
+{
+	display: block;
+}
+.hide
+{
+	display: none;
+}
+
+
+/*----------------MENU--------------*/
+header
+{
+	background-color: white;
+}
+header .wrapper nav li
+{
+	list-style: none;
+	cursor: pointer;
+}
+ul
+{
+	padding: 0;
+}
+header .wrapper .topGradient{
+	width:100%;
+	height: 15vw;
+	display:block;
+	position:absolute;
+	left:0;
+	top:0;
+	background: -webkit-linear-gradient(bottom, rgba(255,0,0,0), rgba(255,255,255,1), rgba(255,255,255,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgba(255,0,0,0), rgba(255,255,255,1), rgba(255,255,255,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(255,255,255,1), rgba(255,255,255,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255,255,255,1), rgba(255,255,255,1)); /* Standard syntax (must be last) */
+}
+header .wrapper .bottomGradient{
+	width:100%;
+	height: 15vw;
+	display:block;
+	position:absolute;
+	left:0;
+	bottom:0;
+	background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
+}
+#menu
+{
+	overflow: hidden;
+}
+#menu_btn
+{
+	position: fixed;
+	cursor:pointer;
+	display: block;
+}
+#menu_btn object
+{
+	width:100%;
+	height: 100%;
+	display: block;
+}
+
+/*----------------COMMENT SECTION---------------------*/
+section#COMMENT
+{
+	background-color: white;
+	display:block;
+}
+section#COMMENT h2
+{
+	overflow-x: hidden;
+}
+section#COMMENT .comment
+{
+	-webkit-transition: all 0.5s ease;
+		 -o-transition: all 0.5s ease;
+	   -moz-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+}
+section#COMMENT .comment.visable
+{
+	opacity: 1;
+}
+section#COMMENT .comment.transparent
+{
+	opacity: 0;
+}
+
+/*----------------CONTENT SECTION---------------------*/
+section#CONTENT
+{
+	display:block;
+	overflow: scroll;
+}
+#nextBtn, #backBtn
+{
+	z-index: 99999;	
+	-webkit-transition: all 0.2s ease;
+		 -o-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+}
+section#CONTENT .slider
+{
+	display:block;
+	margin:0;
+}
+section#CONTENT .slider li
+{
+	display:block;
+	-webkit-transition: all 0.5s ease;
+		 -o-transition: all 0.5s ease;
+	   -moz-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+}
+
+.videocontainer, .picturecontainer
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	background-color: black;
+}
+.picturecontainer img
+{
+	float: right;
+	display:inline;
+	max-width: 100%;
+	width:100%;
+	margin:0 auto;
+    object-fit: cover;
+	-webkit-transition: all 1.5s ease;
+		 -o-transition: all 1.5s ease;
+	   -moz-transition: all 1.5s ease;
+			transition: all 1.5s ease;
+}
+img.null
+{
+	height: 0%;
+	min-height: 0%;
+}
+img.full
+{
+	height: 100%;
+    object-fit: cover;
+}
+video
+{
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin:0 auto;
+	background-color: black;
+	
+    object-fit: cover;
+	-webkit-transition: all 1s ease;
+		 -o-transition: all 1s ease;
+	   -moz-transition: all 1s ease;
+			transition: all 1s ease;
+}
+
+
+li#welcome
+{
+	background-color:#4285F4;
+}
+li#webdesign
+{
+	background-color:#008744;
+}
+li#video
+{
+	background-color:#F4B400;
+}
+li#photo
+{
+	background-color:#4285F4;
+}
+li#timeline
+{
+	background-color:#DB4437;
+	padding:5vh;
+}
+section#CONTENT .slider li#contact
+{
+	background-color:#ffffff;
+	background-repeat: no-repeat;
+	padding:5vh;
+		-webkit-transition: all 1.5s ease 2s;
+			 -o-transition: all 1.5s ease 2s;
+		   -moz-transition: all 1.5s ease 2s;
+				transition: all 1.5s ease 2s;
+}
+	li#contact.nonactivePanel
+	{
+		opacity: 0;
+		background-position: 300% 100%;
+	}
+	li#contact.activePanel
+	{
+		opacity: 1;
+		background-position:100% 50%;
+	}
+	li#contact *
+	{
+		-webkit-transition: all 1.5s ease 3s;
+			 -o-transition: all 1.5s ease 3s;
+		   -moz-transition: all 1.5s ease 3s;
+				transition: all 1.5s ease 3s;
+	}
+	li#contact.nonactivePanel * 
+	{
+		opacity: 0;
+	}
+	li#contact.activePanel * 
+	{
+		opacity: 1;
+	}
+/*---------FOOTER----------*/
+#footer
+{
+	position: fixed;
+	bottom:0;
+	right:0;
+	color:black;
+}
+#footer ul
+{
+	width:100%;
+	display:block;
+	display: -webkit-flex; /* Safari */
+	-webkit-justify-content: space-between; /* Safari 6.1+ */
+	display: flex;
+}
+#footer ul li
+{
+	height: 5vh;
+	min-width: 5vh;
+	text-align: center;
+	line-height: 5vh;
+	display:inline;
+}
+#footer ul li a
+{
+	width:100%;
+	height: 100%;
+	display:block;
+	-webkit-transition: all 0.2s ease;
+		 -o-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+}
+#footer ul li a:hover
+{
+	font-size: 3vh;
+}
+#footer ul li i
+{
+	color:black;
+}
+/*---------EXTRA----------*/
+.comment:before
+{
+	content: "//";
+}

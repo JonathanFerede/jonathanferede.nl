@@ -71,6 +71,7 @@ var JF = {
 			//Wait for welcome message 500ms, then snap en type rest
 			JF.Type(JF.COMMENT.Main, "Hi there, i'm Jonathan Ferede", function(){
 				setTimeout(function(){
+                    console.log('done waiting... type!');
 					JF.snapSlider();
 				}, 500);
 			});
@@ -183,58 +184,68 @@ var JF = {
 		JF.RunPanel(document.getElementById(Panel2Run));
 	},
 	scroll2(x){
-		//scroll2 can receive an int or 'next'/'back'
-		
-		if (x === parseInt(x, 10)){
-			//if x is a number... scroll that amount of pixels
-			var dist = x;
-			
-			if(JF.SliderOrientation == 'horizontal'){
-				$('#CONTENT').animate({	scrollLeft: dist }, JF.scrollspeed);
-			}else{
-				$('#CONTENT').animate({	scrollTop: dist }, JF.scrollspeed);
-			}
-		}else{
-			//if x is a string... scroll back or forward			
-			
-			if(JF.SliderOrientation == 'horizontal'){
-				var scrolled = -$('#welcome').position().left;
-				var dist = JF.TotWidth/JF.nrOfPanels;
-				
-				if(x == 'next'){
-					dist = scrolled+dist;
-					$('#CONTENT').animate({	scrollLeft: dist }, JF.scrollspeed);
-				}
-				else if(x == 'back'){
-					dist = scrolled-dist;
-					$('#CONTENT').animate({	scrollLeft: dist }, JF.scrollspeed);
-				}
-			}
-			else{
-				var scrolled = -$('#welcome').position().top;
-				var dist = JF.TotHeight/JF.nrOfPanels;
-				
-				if(x == 'next'){
-					dist = scrolled+dist;
-					$('#CONTENT').animate({	scrollTop: dist }, JF.scrollspeed);
-				}
-				else if(x == 'back'){
-					dist = scrolled-dist;
-					$('#CONTENT').animate({	scrollTop: dist }, JF.scrollspeed);
-				}
-			}
+        
+        if(x != $('#welcome').position().left || x != $('#welcome').position().top){
+            console.log('scroll '+x)
+            //scroll2 can receive an int or 'next'/'back'
 
-			setTimeout(function(){	
-				JF.snapTimeOut = false;
-				JF.snapSlider();
-			},JF.scrollspeed+100)
-		}
-		setTimeout(function(){
-			JF.snapTimeOut = false;
-		},JF.scrollspeed+100)
-			
+            if (x === parseInt(x, 10)){
+                //if x is a number... scroll that amount of pixels
+                var dist = x;
+
+                if(JF.SliderOrientation == 'horizontal'){
+                    $('#CONTENT').animate({	scrollLeft: dist }, JF.scrollspeed);
+                }else{
+                    $('#CONTENT').animate({	scrollTop: dist }, JF.scrollspeed);
+                }
+            }else{
+                //if x is a string... scroll back or forward			
+
+                if(JF.SliderOrientation == 'horizontal'){
+                    var scrolled = -$('#welcome').position().left;
+                    var dist = JF.TotWidth/JF.nrOfPanels;
+
+                    if(x == 'next'){
+                        dist = scrolled+dist;
+                        $('#CONTENT').animate({	scrollLeft: dist }, JF.scrollspeed);
+                    }
+                    else if(x == 'back'){
+                        dist = scrolled-dist;
+                        $('#CONTENT').animate({	scrollLeft: dist }, JF.scrollspeed);
+                    }
+                }
+                else{
+                    var scrolled = -$('#welcome').position().top;
+                    var dist = JF.TotHeight/JF.nrOfPanels;
+
+                    if(x == 'next'){
+                        dist = scrolled+dist;
+                        $('#CONTENT').animate({	scrollTop: dist }, JF.scrollspeed);
+                    }
+                    else if(x == 'back'){
+                        dist = scrolled-dist;
+                        $('#CONTENT').animate({	scrollTop: dist }, JF.scrollspeed);
+                    }
+                }
+
+                setTimeout(function(){	
+                    console.log('scrolled... now snap!')
+                    JF.snapTimeOut = false;
+                    //JF.snapSlider();
+                },JF.scrollspeed)
+            }
+            setTimeout(function(){
+                JF.snapTimeOut = false;
+            },JF.scrollspeed)
+        }
+        else{
+            console.log('no need to scroll');
+        }
+            
 	},
 	RunPanel: function(panel){
+        
+        
 		//reset other panels classname and set this panel to .activePanel
 		for(i=0;i<document.getElementsByClassName('activePanel').length;i++){
 			JF.replaceClass(document.getElementsByClassName('activePanel')[i], 'activePanel', 'nonactivePanel');
@@ -283,13 +294,14 @@ var JF = {
 			
 		}
 		
-		
+		//type something and do stuff after
 		JF.Type(JF.COMMENT.Main, MainComment, function(){
 			JF.COMMENT.Sub.innerHTML = SubComment;
 			JF.replaceClass(JF.COMMENT.Sub, 'transparent', 'visable');
 		});
 	},
 	Type: function(elements, NewString, callback){
+        console.log('typing')
 		var backspaceSpeed = 23;
 		var MINwriteInterval = 10;
 		var MAXwriteInterval = 10;
